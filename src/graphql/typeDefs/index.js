@@ -7,23 +7,32 @@ type Query {
 
 type Mutation {
     createNewCountry(newCountry: NewCountry): Country!
+    editCountryByID(updatedCountry: NewCountry, id: ID!): Country!
+    deleteCountryById(id: ID!): CountryDeletedMessage!
 }
 
 input NewCountry {
-    Country: String!
-    Year: String!
-    Area_Square_Kilometers: String!
-    Total_Population: String!
+    Country: String
+    Year: String
+    Area_Square_Kilometers: String
+    Total_Population: String
 }
 
 type Country {
-    Country: String!
-    Year: String!
-    Area_Square_Kilometers: String!
-    Total_Population: String!
+    id: ID
+    Country: String
+    Year: String
+    Area_Square_Kilometers: String
+    Total_Population: String
     createdAt: String
-    updatedAt: String
+    updatedAt: String 
+}  
+
+type CountryDeletedMessage {
+    id: ID!
+    message: String!
+    success: Boolean!
 }
 
 
-`; 
+`;  
