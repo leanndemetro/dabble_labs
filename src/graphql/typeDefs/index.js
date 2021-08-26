@@ -2,16 +2,26 @@ import { gql } from "apollo-server-express";
 
 export default gql `
 type Query {
-    _:String!
-hello: String!
-random: String!
+    getAllPosts: [Post!]!
+},
+
+type Mutation {
+    createNewPost(newPost: NewPost): Post!
 }
 
-type Mutation{
-    _:String!
+input NewPost {
+    title: String!
+    content: String!
+    featuredImage: String
 }
 
-type Subscription {
-    _:String!
+type Post {
+    title: String!
+    content: String!
+    featuredImage: String
+    createdAt: String
+    updatedAt: String
 }
+
+
 `; 
