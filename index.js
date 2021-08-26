@@ -1,6 +1,6 @@
 
 import express from 'express';
-import { PORT } from "./src/config/index.js"
+import { PORT, MONGODB_URI } from "./src/config/index.js"
 import { gql, ApolloServer, } from "apollo-server-express"
 
 import mongoose from "mongoose";
@@ -21,9 +21,7 @@ import resolvers from './src/graphql/resolvers/index.js';
 
  async function startApp (typeDefs, resolvers) {
      try{
-     await mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/dabble_labs", { 
-         useNewUrlParser: true,
- });
+     await mongoose.connect( MONGODB_URI, { useNewUrlParser: true });
      await server.start()
     server.applyMiddleware({ 
         app
@@ -34,7 +32,7 @@ import resolvers from './src/graphql/resolvers/index.js';
       });
     } catch (err) {
         console.log(err.message)
-    }
+    } 
 
  } 
 
