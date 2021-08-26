@@ -8,6 +8,8 @@
 <h1>Dabble Labs Interview Exercise</h1>
 </head>
 <body>
+<p>View a video walkthrough of functionality <a href="https://www.loom.com/share/57144b0dd9e8496495ea15bc7cb37229">here</a></p>
+
 <img src="https://i.imgur.com/VJh1lP2.jpg"></img>
 <br></br>
 <img src="https://i.imgur.com/JH5l3sH.jpg"></img>
