@@ -4,7 +4,7 @@ import { PORT } from "./src/config/index.js"
 import { gql, ApolloServer, } from "apollo-server-express"
 
 import mongoose from "mongoose";
-import Post from './src/models/Post.js';
+import Country from './src/models/CountrySchema.js';
 
 const app = express();
  
@@ -15,7 +15,7 @@ import resolvers from './src/graphql/resolvers/index.js';
      typeDefs,
      resolvers,
      context:{
-         Post
+         Country
      }
  }); 
 

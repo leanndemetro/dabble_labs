@@ -1,17 +1,21 @@
 
 export default {
     Query: {
-        getAllPosts: async (_, {}, { Post }) => {
-            let posts = await Post.find();
-            return posts;
+        getAllCountries: async (_, {}, { Country }) => {
+            let countries = await Country.find();
+            return countries;
         }
     },
+
+    //update country
+    //delete country
+
     Mutation: {
-        createNewPost: async (_, {newPost}, {Post} ) => {
-            let result = await Post.create(newPost);
+        createNewCountry: async (_, {newCountry}, {Country} ) => {
+            let result = await Country.create(newCountry);
             return result;
 
         } 
     } 
 }    
-      
+        

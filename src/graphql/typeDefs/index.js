@@ -2,23 +2,25 @@ import { gql } from "apollo-server-express";
 
 export default gql `
 type Query {
-    getAllPosts: [Post!]!
+    getAllCountries: [Country!]!
 },
 
 type Mutation {
-    createNewPost(newPost: NewPost): Post!
+    createNewCountry(newCountry: NewCountry): Country!
 }
 
-input NewPost {
-    title: String!
-    content: String!
-    featuredImage: String
+input NewCountry {
+    Country: String!
+    Year: String!
+    Area_Square_Kilometers: String!
+    Total_Population: String!
 }
 
-type Post {
-    title: String!
-    content: String!
-    featuredImage: String
+type Country {
+    Country: String!
+    Year: String!
+    Area_Square_Kilometers: String!
+    Total_Population: String!
     createdAt: String
     updatedAt: String
 }
